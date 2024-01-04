@@ -1,2 +1,3 @@
-# javascript-programmers
+# Coding Test
 
+- JavaScript
