@@ -1,18 +1,17 @@
 const fs = require('fs');
 const [N, ...input] = fs.readFileSync("./dev/stdin").toString().trim().split("\n")
+
 let one = 0;
 let two = 0;
-const score = [];
+let score = [];
 let answer = [0, 0];
+
 input.forEach(v => {
-  const [team, t] = v.split(' ');
-  const [mm, ss] = t.split(':')
-  if (team == 1) {
-    one++;
-  } else {
-    two++;
-  }
-  const time = Number(mm) * 60 + Number(ss);
+  let [team, t] = v.split(' ');
+  let [mm, ss] = t.split(':')
+  team == 1 ? one++ : two++;
+  
+  let time = Number(mm) * 60 + Number(ss);
   if (one > two) {
     score.push([1, time])
   } else if (two > one) {
@@ -30,8 +29,8 @@ for (let i = 1; i < score.length; i++) {
 }
 
 answer = answer.map(v => {
-  const mm = String(Math.floor(v / 60)).padStart(2, '0')
-  const ss = String(v % 60).padStart(2, '0');
+  let mm = String(Math.floor(v / 60)).padStart(2, '0')
+  let ss = String(v % 60).padStart(2, '0');
   return `${mm}:${ss}`
 }).join('\n')
 
