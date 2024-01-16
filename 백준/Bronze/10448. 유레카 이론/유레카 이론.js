@@ -5,10 +5,8 @@ for (let i = 1; i <= 45; i++) {
     tri.push( i * (i + 1) / 2); // 1000 부근의 삼각수
 }
 
-let result = 0;
-
 for(let i of input) {
-    result = 0;
+    let result = 0;
     for (let x of tri) {
         for (let y of tri) {
             for (let z of tri) {
