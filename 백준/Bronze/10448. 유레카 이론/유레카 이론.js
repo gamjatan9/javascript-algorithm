@@ -7,11 +7,11 @@ for (let i = 1; i <= 45; i++) {
 
 let result = 0;
 
-for( i of input) {
+for(let i of input) {
     result = 0;
-    for (x of tri) {
-        for (y of tri) {
-            for (z of tri) {
+    for (let x of tri) {
+        for (let y of tri) {
+            for (let z of tri) {
                 if (x + y + z === i) {
                     result = 1;
                 }
